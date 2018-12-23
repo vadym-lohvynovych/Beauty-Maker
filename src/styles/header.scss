@@ -1,11 +1,11 @@
 header {
   position: relative;
   height: 100vh;
-  padding: 80px 17% 0;
+  padding: 80px 0;
   overflow: hidden;
   //transition: .1s;
 
-  & .logo, h1, .menu-burger {
+  & .logo, .header-text, .menu-burger {
     position: relative;
     z-index: 12;
   }
@@ -23,6 +23,7 @@ header {
   }
 
   & .menu-burger {
+    display: none;
     position: absolute;
     right: 17%;
     top: 80px;
@@ -60,6 +61,7 @@ header {
     font-weight: 200;
     font-size: calc(10px + 3.5vw);
     z-index: 11;
+    opacity: 0;
     li {
       list-style-type: none;
       display: inline-block;

@@ -1,0 +1,246 @@
+@media (max-width: 1440px){
+  .team-item-1 .team-item-img {
+    width: 398px;
+    height: 400px;
+    top: 20%;
+  }
+  .section-title p:nth-child(1) {
+    font-family: Arial, sans-serif;
+    letter-spacing: -15px;
+    font-size: 180px;
+    font-weight: 700;
+    opacity: .05;
+  }
+  .section-letter {
+    font-size: 900px;
+  }
+  .team-item-1 .team-item-text {
+    top: 35%;
+  }
+  .team-flex-items .team-item-img {
+    width: 300px;
+    height: 300px;
+  }
+  .team-flex-items {
+    font-size: 16px;
+  }
+  .team-item-3 .team-item-text {
+    top: 57%;
+  }
+}
+
+@media (max-width: 1023px) {
+  header {
+    padding: 50px 0;
+  }
+  header .menu-burger {
+    top: 50px;
+    right: 5%;
+    width: 40px;
+    height: 40px;
+  }
+  .section-title p:nth-child(1) {
+    font-size: 150px;
+  }
+  .section-title p:nth-child(2) {
+    font-size: 1.2em;
+  }
+  .mission {
+    height: 500px;
+  }
+  .mission-img {
+    width: 300px;
+    height: 300px;
+  }
+  .mission-title {
+    top: 44%;
+  }
+  .section-description {
+    top: 55%;
+    width: 320px;
+  }
+  .section-description p {
+    font-size: .7em;
+  }
+
+  .section-letter {
+    font-size: 600px;
+  }
+  .projects {
+    height: 800px;
+  }
+  .projects-logos {
+    left: 3%;
+    width: 60%;
+  }
+
+  .team {
+    padding: 50px 3%;
+  }
+  .team-item-1 {
+    margin-bottom: 0;
+  }
+  .team-title {
+    top: 13%;
+    left: 4%;
+  }
+  .team-item-1 .team-item-img {
+    width: 300px;
+    height: 300px;
+  }
+  .team-item-1 .team-item-text {
+    font-size: .6em;
+    left: 25%;
+  }
+  .team-item-text.visible h3:before {
+    width: 70px;
+  }
+  .team h3:before {
+    height: 1px;
+    top: -10px;
+  }
+  .team-flex-items {
+    font-size: 11px;
+  }
+  .team .team-flex-items .team-item {
+    height: 500px;
+  }
+  .team-item-3 .team-item-text {
+    top: 65%;
+  }
+  .team-item-5 .team-item-text {
+    left: 14%;
+    top: 56%;
+  }
+  .team-item-4 .team-item-text {
+    left: 5%;
+  }
+  .event {
+    height: 700px;
+  }
+  .event-letter {
+    right: 1%;
+  }
+  .event-title {
+    left: 37%;
+  }
+  .event-description {
+    top: 31%;
+    left: 5%;
+  }
+  .event-description h3 {
+    font-size: 40px;
+  }
+  .footer p {
+    font-size: .8em;
+  }
+}
+
+@media (max-width: 767px) {
+  header .logo.visible {
+    transform: translate(-50%, 0) scale(.7);
+  }
+  .mission-description {
+    left: 3%;
+  }
+  .mission-img {
+    width: 250px;
+    height: 250px;
+    left: auto;
+    right: 3%;
+  }
+  .mission-title {
+    top: 20%;
+  }
+  .section-letter {
+    font-size: 400px;
+  }
+  .projects {
+    height: 500px;
+  }
+  .projects-title {
+    right: 9%;
+  }
+  .projects-letter {
+    left: 0;
+    top: -40%;
+  }
+  .projects-logos{
+    left: 0;
+    width: 100%;
+    top: 65%;
+  }
+
+  .team {
+    padding: 0px 3%;
+  }
+  .team-item-1 .team-item-img {
+    width: 200px;
+    height: 200px;
+  }
+  .team-item-1 .team-item-text {
+    font-size: .5em;
+  }
+  .team-title {
+    left: .5%;
+  }
+  .team .team-flex-items .team-item {
+    height: 400px;
+    font-size: 0.8em;
+  }
+  .team-flex-items .team-item-img {
+    width: 180px;
+    height: 180px;
+  }
+  .team-item-2 .team-item-text {
+    right: auto;
+    top: 65%;
+  }
+  .event-letter {
+    top: 200px;
+  }
+  .event-title {
+    left: auto;
+    right: 5%;
+  }
+  .footer {
+    height: 150px;
+  }
+  .footer .logo img {
+    width: 90px;
+  }
+}
+@media (max-width: 479px) {
+  .section-description {
+    width: 300px;
+  }
+  .team-item-1 .team-item-text {
+    top: 50%;
+    left: 0;
+  }
+  .team-title {
+    top: 9%;
+  }
+  .team-flex-items .team-item-img {
+    width: 130px;
+    height: 130px;
+  }
+  .team-item-2 .team-item-text {
+    top: 50%;
+  }
+  .team-item-3 .team-item-text {
+    top: 81%;
+  }
+  .team-item-5 .team-item-text {
+    top: 62%;
+  }
+  .team .team-flex-items .team-item {
+    height: 350px;
+  }
+  .team-item-4 .team-item-text {
+    bottom: 0;
+  }
+  .event-title {
+    top: 27%;
+  }
+}

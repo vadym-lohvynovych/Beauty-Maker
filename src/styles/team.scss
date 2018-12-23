@@ -48,8 +48,10 @@
   }
 
   &-letter {
-    left: 50%;
+    left: 0;
     top: -10%;
+    width: 100%;
+    text-align: center;
     transform: translate(-50%, 0);
   }
 
@@ -67,6 +69,7 @@
       & p {
         opacity: 0;
         transition: 3s;
+        font-size: 1em;
       }
       &.visible h3:before {
         width: 50px;
@@ -87,6 +90,11 @@
       padding: 0;
       width: 50%;
       height: 600px;
+      & img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
     }
     & .team-item-text {
       position: absolute;
@@ -99,6 +107,7 @@
   height: 660px;
   margin-bottom: 150px;
   & .team-item-text {
+    display: inline-block;
     left: 35%;
     top: 20%;
   }
@@ -119,7 +128,7 @@
   }
   .team-item-text {
     right: 0;
-    top: 40%;
+    top: 50%;
   }
 }
 
@@ -130,7 +139,8 @@
     bottom: 0;
   }
   .team-item-text {
-    top: 65%;
+    top: 30%;
+    left: 10%;
   }
 }
 

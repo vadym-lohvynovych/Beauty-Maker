@@ -15,13 +15,8 @@ $(document).ready(function() {
         teamItem5Img: $('.team-item-5 .team-item-img').offset().top
 
     };
-    let titlesAnimated = {
-        '.mission-title': false,
-        '.projects-title': false,
-        '.team-title': false,
-        '.event-title': false
-    };
 
+    $('.header-text').css('opacity', 1);
     
     $(window).on('scroll', function() {
         showTeamItemHeader('.team-item-1 .team-item-text');
@@ -29,33 +24,34 @@ $(document).ready(function() {
         showTeamItemHeader('.team-item-3 .team-item-text');
         showTeamItemHeader('.team-item-4 .team-item-text');
         showTeamItemHeader('.team-item-5 .team-item-text');
+        showTeamItemHeader('.event-description', 120);
 
         moveHeader();
         moveAndAnimateSectionTitleOnScroll('.mission-title', defaultOffsets.missionTitle, .7);
         moveAndAnimateSectionTitleOnScroll('.projects-title', defaultOffsets.projectsTitle, .5);
-        moveAndAnimateSectionTitleOnScroll('.team-title', defaultOffsets.teamTitle, .2);
+        moveAndAnimateSectionTitleOnScroll('.team-title', defaultOffsets.teamTitle, .3);
         moveAndAnimateSectionTitleOnScroll('.event-title', defaultOffsets.eventTitle, .8);
 
         moveItemOnScroll('.mission-img', defaultOffsets.missionImg, .15);
-        moveItemOnScroll('.team-item-1 .team-item-img', defaultOffsets.teamItem1Img, -.15);
-        moveItemOnScroll('.team-item-2 .team-item-img', defaultOffsets.teamItem2Img, .1);
-        moveItemOnScroll('.team-item-3 .team-item-img', defaultOffsets.teamItem3Img, -.1);
+        moveItemOnScroll('.team-item-1 .team-item-img', defaultOffsets.teamItem1Img, .1);
+        moveItemOnScroll('.team-item-2 .team-item-img', defaultOffsets.teamItem2Img, .2);
+        moveItemOnScroll('.team-item-3 .team-item-img', defaultOffsets.teamItem3Img, -.13);
         moveItemOnScroll('.team-item-4 .team-item-img', defaultOffsets.teamItem4Img, .2);
         moveItemOnScroll('.team-item-5 .team-item-img', defaultOffsets.teamItem5Img, -.2);
 
-        moveLettersOnScroll('.projects-letter', defaultOffsets.projectsLetter, .15);
-        moveLettersOnScroll('.team-letter', defaultOffsets.projectsLetter, .2);
-        moveLettersOnScroll('.event-letter', defaultOffsets.eventLetter, -.2);
+        moveItemOnScroll('.projects-letter', defaultOffsets.projectsLetter, .2);
+        moveItemOnScroll('.team-letter', defaultOffsets.projectsLetter, .26);
+        moveItemOnScroll('.event-letter', defaultOffsets.eventLetter, -.2);
     });
 
     animateTextShowing('.header-text', 40);
 
     
-    function showTeamItemHeader(selector) {
+    function showTeamItemHeader(selector, interval) {
         if($(window).scrollTop() + $(window).height() > $(selector).offset().top) {
             if(!$(selector).hasClass('visible')) {
                 $(selector).addClass('visible');
-                animateTextShowing($(selector).find('h3'), 50);
+                animateTextShowing($(selector).find('h3'), (interval || 50));
             }
         }
     }
@@ -106,10 +102,9 @@ $(document).ready(function() {
         //if block is on screen
         if(($(window).scrollTop() + $(window).height()) > $(selector).offset().top && $(window).scrollTop() < $(selector).offset().top + $(selector).height()) {
             $(selector).css('transform', 'translateY(-'+ (($(window).scrollTop() + $(window).height() - defaultOffset) * (speedCoef || 1)) + 'px)');
-            if(!$(selector).hasClass('showed') && !titlesAnimated[selector]) $(selector).addClass('showed');
         }
-        if($(selector).hasClass('showed') && !titlesAnimated[selector]) {
-            titlesAnimated[selector] = true;
+        if(!$(selector).hasClass('showed') ) {
+            $(selector).addClass('showed');
             animateTextShowing($(selector).find('p:nth-child(2)'), 200);
         }
     }
@@ -118,13 +113,6 @@ $(document).ready(function() {
         //if block is on screen
         if(($(window).scrollTop() + $(window).height()) > $(selector).offset().top && $(window).scrollTop() < $(selector).offset().top + $(selector).height()) {
             $(selector).css('transform', 'translateY('+ ((($(window).scrollTop()) + $(window).height() - defaultOffset  + 300) * (speedCoef || 1)) + 'px)');
-        }
-    }
-
-    function moveLettersOnScroll(selector, defaultOffset, speedCoef) {
-        //if block is on screen
-        if(($(window).scrollTop() + $(window).height()) > $(selector).offset().top && $(window).scrollTop() < $(selector).offset().top + $(selector).height()) {
-            $(selector).css('transform', 'translate(-50%,'+ ((($(window).scrollTop()) + $(window).height() - defaultOffset  + 300) * (speedCoef || 1)) + 'px)');
         }
     }
 

@@ -5,7 +5,6 @@
   background: url("../img/events_background.png") no-repeat 50%;
   -webkit-background-size: cover;
   background-size: cover;
-  overflow: hidden;
 
   &-title {
     z-index: 20;
@@ -17,9 +16,31 @@
     left: 20%;
     top: 40%;
     z-index: 10;
+    opacity: 0;
+    transition: 3s;
+    &.visible {
+      opacity: 1;
+    }
+    & h3 {
+      font-size: 72px;
+      font-weight: 400;
+      letter-spacing: -1.04px;
+      margin-bottom: 50px;
+      & li {
+        list-style-type: none;
+        display: inline-block;
+        transform: translate(150px, 0);
+        opacity: 0;
+        transition: 2s;
+        &.visible {
+          opacity: 1;
+          transform: translate(0,0);
+        }
+      }
+    }
   }
   &-letter {
-    right: -14%;
+    right: 5%;
     top: 100px;
     transform: translate(-50%, -100px);
   }
