@@ -1,0 +1,108 @@
+header {
+  position: relative;
+  height: 100vh;
+  padding: 80px 17% 0;
+  overflow: hidden;
+  //transition: .1s;
+
+  & .logo, h1, .menu-burger {
+    position: relative;
+    z-index: 12;
+  }
+
+  & .logo {
+    left: 50%;
+    display: inline-block;
+    transform: translate(-50%, 0) scale(2);
+    opacity: 0;
+    transition: 1s;
+    &.visible {
+      transform: translate(-50%, 0) scale(1);
+      opacity: 1;
+    }
+  }
+
+  & .menu-burger {
+    position: absolute;
+    right: 17%;
+    top: 80px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    opacity: 0;
+    transition: 1s;
+    &.visible {
+      opacity: 1;
+    }
+
+    &-line {
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background: #fff;
+      &:first-child {
+        top: 35%;
+      }
+      &:last-child {
+        top: 65%;
+      }
+    }
+  }
+
+  .header-text {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    line-height: 100vh;
+    text-align: center;
+    letter-spacing: -1.04px;
+    font-weight: 200;
+    font-size: calc(10px + 3.5vw);
+    z-index: 11;
+    li {
+      list-style-type: none;
+      display: inline-block;
+      transform: translate(-100px, -100px) scale(0);
+      //opacity: 0;
+      transition: 1s;
+      &.visible {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+      }
+    }
+  }
+
+  & .video-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    &:after {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      opacity: 1;
+      z-index: 5;
+    }
+  }
+  & video {
+    position: absolute;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    min-width: 101%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: 4s;
+    &.visible {
+      opacity: .2;
+    }
+  }
+}

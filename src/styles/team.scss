@@ -1,0 +1,158 @@
+
+.team {
+  position: relative;
+  padding: 200px 15%;
+  &-title {
+    left: 10%;
+    top: 20%;
+  }
+
+  & h3 {
+    position: relative;
+    font-size: 2em;
+    white-space: nowrap;
+    margin-bottom: 17px;
+    font-weight: 400;
+    &:before {
+      display: block;
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 5px;
+      background: #fff;
+      left: 0;
+      top: -30px;
+      //opacity: 0;
+      transition: 2s;
+    }
+    & li {
+      list-style-type: none;
+      display: inline-block;
+      opacity: 0;
+      transition: .5s;
+      transform: translateX(50px);
+      &.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &-description {
+    position: relative;
+    line-height: 23px;
+    margin-top: 40px;
+    width: 321px;
+    font-size: 15px;
+    transition: 2s;
+  }
+
+  &-letter {
+    left: 50%;
+    top: -10%;
+    transform: translate(-50%, 0);
+  }
+
+  &-item {
+    position: relative;
+    z-index: 5;
+    &-img {
+      position: absolute;
+      top: 0;
+      box-shadow: 0 178px 152px rgba(0, 0, 0, 0.45);
+    }
+    &-text {
+      position: relative;
+      z-index: 5;
+      & p {
+        opacity: 0;
+        transition: 3s;
+      }
+      &.visible h3:before {
+        width: 50px;
+      }
+      &.visible p {
+        opacity: 1;
+      }
+
+    }
+    &-position {
+      opacity: 0.5;
+    }
+
+  }
+  .team-flex-items {
+    @include flex(flex-start, center, wrap);
+    & .team-item {
+      padding: 0;
+      width: 50%;
+      height: 600px;
+    }
+    & .team-item-text {
+      position: absolute;
+    }
+  }
+}
+
+.team-item-1 {
+  position: relative;
+  height: 660px;
+  margin-bottom: 150px;
+  & .team-item-text {
+    left: 35%;
+    top: 20%;
+  }
+  & .team-item-img {
+    right: 0;
+    width: 660px;
+    height: 100%;
+  }
+  & img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.team-item-2 {
+  .team-item-img {
+    top: -20%;
+  }
+  .team-item-text {
+    right: 0;
+    top: 40%;
+  }
+}
+
+.team-item-3 {
+  .team-item-img {
+    top: auto;
+    right: 0;
+    bottom: 0;
+  }
+  .team-item-text {
+    top: 65%;
+  }
+}
+
+.team-item-4 {
+  .team-item-img {
+    top: 30px;
+    left: 20%;
+  }
+
+  .team-item-text {
+    bottom: 20%;
+  }
+}
+
+.team-item-5 {
+  .team-item-img {
+    top: auto;
+    right: 0;
+    bottom: 0;
+  }
+  .team-item-text {
+    left: 70%;
+    top: 67%;
+  }
+}

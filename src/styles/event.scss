@@ -1,0 +1,49 @@
+
+.event {
+  position: relative;
+  height: 1300px;
+  background: url("../img/events_background.png") no-repeat 50%;
+  -webkit-background-size: cover;
+  background-size: cover;
+  overflow: hidden;
+
+  &-title {
+    z-index: 20;
+    top: 40%;
+    left: 40%;
+
+  }
+  &-description {
+    left: 20%;
+    top: 40%;
+    z-index: 10;
+  }
+  &-letter {
+    right: -14%;
+    top: 100px;
+    transform: translate(-50%, -100px);
+  }
+}
+
+.footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 200px;
+  text-align: center;
+  z-index: 15;
+  opacity: .5;
+
+  .logo {
+    display: block;
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  p {
+    font-weight: 400;
+    margin-top: 30px;
+  }
+}

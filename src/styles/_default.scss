@@ -1,0 +1,89 @@
+
+@mixin flex($align: stretch, $justify: stretch, $wrap: nowrap, $direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+  flex-wrap: $wrap;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+body {
+  font-size: 19px;
+  color: #fff;
+  font-family: 'RalewayThin', Arial, sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+  background: #191e3f;
+}
+
+.section-title {
+  position: absolute;
+  display: inline-block;
+  z-index: 5;
+  & p:nth-child(1) {
+    font-family: Arial, sans-serif;
+    letter-spacing: -15px;
+    font-size: 286px;
+    font-weight: 700;
+    opacity: .05;
+  }
+  & p:nth-child(2) {
+    position: absolute;
+    left: 35%;
+    top: 50%;
+    font-size: 1.6em;
+    transform: rotate(-90deg);
+    & li {
+      display: inline-block;
+      list-style-type: none;
+      opacity: 0;
+      transform: translateX(150px);
+      transition: 1s;
+      &.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+}
+.section-description {
+  width: 500px;
+  position: absolute;
+  z-index: 5;
+  & h2 {
+    font-size: 72px;
+    font-weight: 400;
+    letter-spacing: -1.04px;
+    margin-bottom: 50px;
+  }
+  & p:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+.section-letter {
+  position: absolute;
+  opacity: 0.61;
+  text-shadow: 0 178px 152px rgba(0, 0, 0, 0.45);
+  color: #191e3f;
+  font-family: "RalewayBlack", sans-serif;
+  font-size: 1296px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: -8.87px;
+  z-index: 2;
+}
+
+.transition {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, #191e3f);
+  z-index: 1;
+}

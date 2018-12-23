@@ -1,0 +1,35 @@
+
+
+.mission {
+  position: relative;
+  display: flex;
+  height: 700px;
+
+  &-img {
+    position: absolute;
+    box-shadow: 0 178px 152px rgba(0, 0, 0, 0.45);
+    background: rgba(103, 7, 21, 0.55);
+    width: 500px;
+    height: 500px;
+    left: 32%;
+    top: 0;
+    //transform: translateY(-50%);
+    & img {
+      display: block;
+      height: 100%;
+      width: 100%;
+      opacity: .7;
+    }
+  }
+
+  &-title {
+    top: 70%;
+    left: 10%;
+    transform: translateY(-50%);
+  }
+  &-description {
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
