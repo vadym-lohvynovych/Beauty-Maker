@@ -110,6 +110,11 @@
     display: inline-block;
     left: 35%;
     top: 20%;
+    opacity: 0;
+    transition: 1s;
+    &.visible {
+      opacity: 1;
+    }
   }
   & .team-item-img {
     right: 0;
