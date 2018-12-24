@@ -43,13 +43,15 @@ $(document).ready(function() {
         moveItemOnScroll(selectors.missionTitle, defaultOffsets.missionTitle, -.5);
         moveItemOnScroll(selectors.projectsTitle, defaultOffsets.projectsTitle, -.4);
         moveItemOnScroll(selectors.teamTitle, defaultOffsets.teamTitle, -.3);
-        moveItemOnScroll(selectors.eventTitle, defaultOffsets.eventTitle, -.6);
+        moveItemOnScroll(selectors.eventTitle, defaultOffsets.eventTitle, -.4);
         moveItemOnScroll(selectors.missionImg, defaultOffsets.missionImg, .15);
+
         moveItemOnScroll(selectors.teamItem1Img, defaultOffsets.teamItem1Img, .1);
         moveItemOnScroll(selectors.teamItem2Img, defaultOffsets.teamItem2Img, .2);
         moveItemOnScroll(selectors.teamItem3Img, defaultOffsets.teamItem3Img, -.13);
         moveItemOnScroll(selectors.teamItem4Img, defaultOffsets.teamItem4Img, .2);
         moveItemOnScroll(selectors.teamItem5Img, defaultOffsets.teamItem5Img, -.2);
+
         moveItemOnScroll(selectors.projectsLetter, defaultOffsets.projectsLetter, .2);
         moveItemOnScroll(selectors.teamLetter, defaultOffsets.teamLetter, .26);
         moveItemOnScroll(selectors.eventLetter, defaultOffsets.eventLetter, -.2);
