@@ -17,25 +17,14 @@
       display: block;
       position: absolute;
       content: "";
-      width: 0;
+      width: 50px;
       height: 5px;
       background: #fff;
       left: 0;
       top: -30px;
-      //opacity: 0;
       transition: 2s;
     }
-    & li {
-      list-style-type: none;
-      display: inline-block;
-      opacity: 0;
-      transition: .5s;
-      transform: translateX(50px);
-      &.visible {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
+
   }
 
   &-description {
@@ -49,10 +38,9 @@
 
   &-letter {
     left: 0;
-    top: -10%;
+    top: 24%;
     width: 100%;
     text-align: center;
-    transform: translate(-50%, 0);
   }
 
   &-item {
@@ -67,17 +55,9 @@
       position: relative;
       z-index: 5;
       & p {
-        opacity: 0;
         transition: 3s;
         font-size: 1em;
       }
-      &.visible h3:before {
-        width: 50px;
-      }
-      &.visible p {
-        opacity: 1;
-      }
-
     }
     &-position {
       opacity: 0.5;
@@ -110,11 +90,7 @@
     display: inline-block;
     left: 35%;
     top: 20%;
-    opacity: 0;
     transition: 1s;
-    &.visible {
-      opacity: 1;
-    }
   }
   & .team-item-img {
     right: 0;
