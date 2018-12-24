@@ -35,10 +35,12 @@ $(document).ready(function() {
         teamItem5Img: selectors.teamItem5Img.offset().top
     };
 
-    let st = 0;
-    //remove blink when page loading
+    let st = 0,
+        wh = $(window).height();
+
+    //remove blick when page loading
     $('.header-text').css('opacity', 1);
-    //
+
     $(window).on('scroll', function() {
         st = $(window).scrollTop();
         moveItemOnScroll(selectors.missionTitle, defaultOffsets.missionTitle, -.5);
@@ -54,6 +56,8 @@ $(document).ready(function() {
         moveItemOnScroll(selectors.projectsLetter, defaultOffsets.projectsLetter, .2);
         moveItemOnScroll(selectors.teamLetter, defaultOffsets.teamLetter, .26);
         moveItemOnScroll(selectors.eventLetter, defaultOffsets.eventLetter, -.2);
+    }).on('resize', function() {
+        wh = $(window).height();
     });
 
     animateTextShowing('.header-text', 40);
