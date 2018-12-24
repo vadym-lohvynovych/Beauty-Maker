@@ -96,7 +96,7 @@ $(document).ready(function() {
 
     function moveItemOnScroll(selector, defaultOffset, speedCoef) {
         //if block is on screen
-        if((st + wh) > selector.offset().top && st < selector.offset().top + selector.height()) {
+        if((st + wh + 100) > selector.offset().top && st < selector.offset().top + selector.height()) {
             selector.css('transform', 'translateY('+ ((st + wh - defaultOffset  + 300) * (speedCoef || 1)) + 'px)');
         }
     }
