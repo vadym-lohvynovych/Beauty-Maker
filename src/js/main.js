@@ -37,20 +37,20 @@ $(document).ready(function() {
         teamItem4Img: selectors.teamItem4Img.offset().top,
         teamItem5Img: selectors.teamItem5Img.offset().top
     };
-    
+
     let st = 0,
         wh = $(window).height();
 
     $('.header-text').css('opacity', 1);
     
     $(window).on('scroll', function() {
-        
+
         st = $(window).scrollTop();
 
-        moveAndAnimateSectionTitleOnScroll(selectors.missionTitle, defaultOffsets.missionTitle, .7);
-        moveAndAnimateSectionTitleOnScroll(selectors.projectsTitle, defaultOffsets.projectsTitle, .5);
+        moveAndAnimateSectionTitleOnScroll(selectors.missionTitle, defaultOffsets.missionTitle, .5);
+        moveAndAnimateSectionTitleOnScroll(selectors.projectsTitle, defaultOffsets.projectsTitle, .4);
         moveAndAnimateSectionTitleOnScroll(selectors.teamTitle, defaultOffsets.teamTitle, .3);
-        moveAndAnimateSectionTitleOnScroll(selectors.eventTitle, defaultOffsets.eventTitle, .8);
+        moveAndAnimateSectionTitleOnScroll(selectors.eventTitle, defaultOffsets.eventTitle, .6);
 
         moveItemOnScroll(selectors.missionImg, defaultOffsets.missionImg, .15);
         moveItemOnScroll(selectors.teamItem1Img, defaultOffsets.teamItem1Img, .1);
