@@ -39,17 +39,6 @@ body {
     top: 50%;
     font-size: 1.6em;
     transform: rotate(-90deg);
-    & li {
-      display: inline-block;
-      list-style-type: none;
-      opacity: 0;
-      transform: translateX(150px);
-      transition: 1s;
-      &.visible {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
   }
 }
 .section-description {
