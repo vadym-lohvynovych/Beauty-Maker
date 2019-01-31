@@ -20,6 +20,10 @@ body {
   overflow-x: hidden;
   background: #191e3f;
   scroll-behavior: smooth;
+  transition: .2s linear;
+  &.animated {
+    transform: translateY(-50px);
+  }
 }
 
 .section-title {

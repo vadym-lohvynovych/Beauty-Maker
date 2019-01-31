@@ -24,7 +24,7 @@
                 currentY = minScrollTop;
             }
 
-            $('html,body').scrollTop(-currentY);
+            $('html,body').scrollTop(-currentY / 2);
 
             vy *= fricton;
 
