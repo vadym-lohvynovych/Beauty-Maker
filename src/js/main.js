@@ -1,35 +1,10 @@
 $(document).ready(function() {
 
-
-
-
     $('html, body').smoothWheel();
 
+    window.scrollTo(0, 0);
 
-    // $('body').bind('mousewheel', function (e) {
-    //     e.preventDefault();
-    //     if (!(e.originalEvent.wheelDelta == 120)) {
-    //         var top = parseInt($(".content").css("top"));
-    //         $(".content").css("top", (top - 100) + "px");
-    //         top = parseInt($(".content").css("top"));
-    //         if (top <= -500) {
-    //             setTimeout(function () {
-    //                 $("body").css("top", "-500px");
-    //             }, 100);
-    //         }
-    //     } else {
-    //         console.log('--->', 2);
-    //         var top = parseInt($(".content").css("top"));
-    //
-    //         $(".content").css("top", (top + 100) + "px");
-    //         top = parseInt($(".content").css("top"));
-    //         if (top >= 0) {
-    //             setTimeout(function () {
-    //                 $(".content").css("top", "0");
-    //             }, 100);
-    //         }
-    //     }
-    // });
+    animateTextShowing('.header-text', 20);
 
     const selectors = {
         teamItem1Img: $('.team-item-1 .team-item-img'),
@@ -37,6 +12,13 @@ $(document).ready(function() {
         teamItem3Img: $('.team-item-3 .team-item-img'),
         teamItem4Img: $('.team-item-4 .team-item-img'),
         teamItem5Img: $('.team-item-5 .team-item-img'),
+
+        teamItem1text: $('.team-item-1 .team-item-text'),
+        teamItem2text: $('.team-item-2 .team-item-text'),
+        teamItem3text: $('.team-item-3 .team-item-text'),
+        teamItem4text: $('.team-item-4 .team-item-text'),
+        teamItem5text: $('.team-item-5 .team-item-text'),
+
         missionTitle: $('.mission-title'),
         projectsTitle: $('.projects-title'),
         teamTitle: $('.team-title'),
@@ -84,16 +66,27 @@ $(document).ready(function() {
             moveItemOnScroll(selectors.teamItem4Img, defaultOffsets.teamItem4Img, .2);
             moveItemOnScroll(selectors.teamItem5Img, defaultOffsets.teamItem5Img, -.2);
 
-            moveItemOnScroll(selectors.projectsLetter, defaultOffsets.projectsLetter, .2);
-            moveItemOnScroll(selectors.teamLetter, defaultOffsets.teamLetter, .26);
-            moveItemOnScroll(selectors.eventLetter, defaultOffsets.eventLetter, -.2);
+            // moveItemOnScroll(selectors.projectsLetter, defaultOffsets.projectsLetter, .1);
+            // moveItemOnScroll(selectors.teamLetter, defaultOffsets.teamLetter, .26);
+            // moveItemOnScroll(selectors.eventLetter, defaultOffsets.eventLetter, -.2);
+
+            showItem(selectors.projectsLetter, 500);
+            showItem(selectors.eventLetter, 500);
+            showItem(selectors.missionImg, 100);
+
+            showItem(selectors.teamItem1text, 100);
+            showItem(selectors.teamItem2text, 100);
+            showItem(selectors.teamItem3text, 100);
+            showItem(selectors.teamItem4text, 100);
+            showItem(selectors.teamItem5text, 100);
+
+            showItem($('.event-description h3'), 100);
+            showItem($('.event-description p:first'), 100);
+            showItem($('.event-description p:last'), 100);
         })
         .on('resize', function() {
             wh = $(window).height();
         });
-
-
-    animateTextShowing('.header-text', 40);
 
     function animateTextShowing(selector, interval) {
         
@@ -116,8 +109,10 @@ $(document).ready(function() {
             (function animateByTurns(i) {
                 $(items[i]).addClass('visible');
                 if(i === items.length) {
-                    $('header .logo').addClass('visible');
-                    $('header video').addClass('visible');
+                    setTimeout(function() {
+                        $('.logo').addClass('visible');
+                        $('.video-wrapper').addClass('visible');
+                    }, 700);
                     return;
                 }
                 setTimeout(function() {
@@ -133,5 +128,11 @@ $(document).ready(function() {
             selector.css('transform', 'translateY('+ ((st + wh - defaultOffset  + 300) * (speedCoef || 1)) + 'px)');
         }
     }
+
+    function showItem(item, additionalOffset) {
+        if(item.offset().top + item.height() / 2 < st + wh) item.addClass('visible');
+
+    }
+
 
 });

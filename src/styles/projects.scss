@@ -1,8 +1,8 @@
 
 .projects {
   position: relative;
-  height: 1300px;
-  background: url("../img/projects_background.png") no-repeat 50%;
+  height: 1100px;
+  background: url("../img/projects_background.png") no-repeat;
   background-size: cover;
 
   &-logos {
@@ -29,8 +29,8 @@
   }
 
   &-letter {
-    left: 10%;
+    left: 0;
     top: -20%;
-    transform: translate(-50%, 0);
+    transition: 5s;
   }
 }

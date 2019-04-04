@@ -41,6 +41,7 @@
     top: 24%;
     width: 100%;
     text-align: center;
+    opacity: .61;
   }
 
   &-item {
@@ -54,6 +55,8 @@
     &-text {
       position: relative;
       z-index: 5;
+      opacity: 0;
+      transition: opacity 5s, transform 2s;
       & p {
         transition: 3s;
         font-size: 1em;
@@ -90,7 +93,11 @@
     display: inline-block;
     left: 35%;
     top: 20%;
-    transition: 1s;
+    transform: translateY(100px);
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   & .team-item-img {
     right: 0;
@@ -110,6 +117,11 @@
   .team-item-text {
     right: 0;
     top: 50%;
+    transform: translateX(100px);
+    &.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 }
 
@@ -122,6 +134,11 @@
   .team-item-text {
     top: 30%;
     left: 10%;
+    transform: translateX(-100px);
+    &.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 }
 
@@ -133,6 +150,11 @@
 
   .team-item-text {
     bottom: 20%;
+    transform: translateX(-100px);
+    &.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 }
 
@@ -145,5 +167,10 @@
   .team-item-text {
     left: 70%;
     top: 67%;
+    transform: translateX(100px);
+    &.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 }

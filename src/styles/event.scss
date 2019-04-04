@@ -2,6 +2,7 @@
 .event {
   position: relative;
   height: 1300px;
+  overflow: hidden;
   background: url("../img/events_background.png") no-repeat 50%;
   -webkit-background-size: cover;
   background-size: cover;
@@ -17,6 +18,16 @@
     top: 40%;
     z-index: 10;
     transition: 3s;
+
+    * {
+      opacity: 0;
+      transform: translateX(-150px);
+      transition: 2s;
+      &.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
     & h3 {
       font-size: 72px;
       font-weight: 400;
@@ -26,8 +37,7 @@
   }
   &-letter {
     right: 5%;
-    top: 100px;
-    transform: translate(-50%, -100px);
+    top: 0;
   }
 }
 

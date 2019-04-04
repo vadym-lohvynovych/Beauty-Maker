@@ -1,10 +1,10 @@
 (function ($) {
 
-    var self = this, container, running=false, currentY = 0, targetY = 0, oldY = 0, maxScrollTop= 0, minScrollTop, direction, onRenderCallback=null,
+    var self = this, load = true, container, running=false, currentY = 0, targetY = 0, oldY = 0, vh = $(window).height(), maxScrollTop= $(document.body).height(), minScrollTop, direction, onRenderCallback=null,
         fricton = 0.95, // higher value for slower deceleration
         vy = 0,
         stepAmt = 1,
-        minMovement= 0.1,
+        minMovement= 1,
         ts=0.1;
 
     var updateScrollTarget = function (amt) {
@@ -14,8 +14,16 @@
         oldY = targetY;
 
     }
+
     var render = function () {
         if (vy < -(minMovement) || vy > minMovement) {
+            if(load) {
+                currentY = -$(window).scrollTop() * 2;
+                load = !load;
+            }
+            if(($(window).scrollTop() + vh >= maxScrollTop && direction === -1) || (currentY >= 0 && direction === 1)) {
+                return;
+            }
             currentY = (currentY + vy);
             if (currentY > maxScrollTop) {
                 currentY = vy = 0;
@@ -142,6 +150,5 @@
             }
         });
     };
-
 
 })(jQuery);
