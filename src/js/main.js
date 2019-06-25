@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
-    $('html, body').smoothWheel();
+    // $('html, body').smoothWheel();
 
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
 
     animateTextShowing('.header-text', 20);
 
@@ -66,6 +66,7 @@ $(document).ready(function() {
             moveItemOnScroll(selectors.teamItem4Img, defaultOffsets.teamItem4Img, .2);
             moveItemOnScroll(selectors.teamItem5Img, defaultOffsets.teamItem5Img, -.2);
 
+            // optimization:)
             // moveItemOnScroll(selectors.projectsLetter, defaultOffsets.projectsLetter, .1);
             // moveItemOnScroll(selectors.teamLetter, defaultOffsets.teamLetter, .26);
             // moveItemOnScroll(selectors.eventLetter, defaultOffsets.eventLetter, -.2);
@@ -131,7 +132,6 @@ $(document).ready(function() {
 
     function showItem(item, additionalOffset) {
         if(item.offset().top + item.height() / 2 < st + wh) item.addClass('visible');
-
     }
 
 

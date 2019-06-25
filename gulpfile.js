@@ -13,7 +13,6 @@ const production = process.env.NODE_ENV === 'production';
 
 const jsFiles = [
     'src/js/jquery-3.3.1.min.js',
-    'src/js/smoothWheel.js',
     'src/js/main.js'
 ];
 
